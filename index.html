@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu Đồ Khảo Sát AI trong Học Tập</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Khảo Sát Sử Dụng AI trong Học Tập</h1>
+            <p>Phân tích hành vi và thái độ của sinh viên đối với công cụ trí tuệ nhân tạo</p>
+        </div>
+ 
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">Tổng số người khảo sát</div>
+                <div class="stat-number" id="totalResponses">49</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Đã sử dụng AI</div>
+                <div class="stat-number" id="usedAI">48</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Sử dụng hàng ngày</div>
+                <div class="stat-number" id="dailyUsers">25</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Tin tưởng kết quả</div>
+                <div class="stat-number" id="trustCount">24</div>
+            </div>
+        </div>
+ 
+        <div class="charts-grid">
+            <!-- Chart 1: Từng sử dụng AI chưa -->
+            <div class="chart-card">
+                <h2>Trải Nghiệm với AI</h2>
+                <div class="chart-container">
+                    <canvas id="aiExperienceChart"></canvas>
+                </div>
+            </div>
+ 
+            <!-- Chart 2: Năm học -->
+            <div class="chart-card">
+                <h2>Phân Bố Theo Năm Học</h2>
+                <div class="chart-container small">
+                    <canvas id="yearChart"></canvas>
+                </div>
+            </div>
+ 
+            <!-- Chart 3: Tần suất sử dụng -->
+            <div class="chart-card">
+                <h2>Tần Suất Sử Dụng AI</h2>
+                <div class="chart-container">
+                    <canvas id="frequencyChart"></canvas>
+                </div>
+            </div>
+ 
+            <!-- Chart 4: Mức độ tin tưởng -->
+            <div class="chart-card">
+                <h2>Mức Độ Tin Tưởng Kết Quả AI</h2>
+                <div class="trust-level">
+                    <div class="trust-item">
+                        <div class="trust-circle yes">19</div>
+                        <div class="trust-label">Hoàn toàn có</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-circle partial">29</div>
+                        <div class="trust-label">Có nhưng kiểm tra</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-circle no">1</div>
+                        <div class="trust-label">Không tin tưởng</div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- Chart 5: Top công cụ AI -->
+            <div class="chart-card full-width">
+                <h2>Công Cụ AI Được Sử Dụng Nhiều Nhất</h2>
+                <div class="chart-container">
+                    <canvas id="toolsChart"></canvas>
+                </div>
+            </div>
+ 
+            <!-- Chart 6: Mục đích sử dụng -->
+            <div class="chart-card full-width">
+                <h2>Mục Đích Sử Dụng AI trong Học Tập</h2>
+                <div class="chart-container">
+                    <canvas id="purposeChart"></canvas>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="footer">
+            <p>💡 Dữ liệu được thu thập từ khảo sát trực tuyến | Cập nhật: 18/06/2026</p>
+        </div>
+    </div>
+ 
+    <script src="script.js"></script>
+</body>
+</html>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+

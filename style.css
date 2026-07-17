@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 30px 20px;
+}
+ 
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+ 
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+ 
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+ 
+.header p {
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+ 
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+ 
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+ 
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+ 
+.stat-number {
+    font-size: 2.5em;
+    color: #667eea;
+    font-weight: bold;
+    margin: 10px 0;
+}
+ 
+.stat-label {
+    color: #666;
+    font-size: 0.95em;
+}
+ 
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+ 
+.chart-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+ 
+.chart-card h2 {
+    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #667eea;
+}
+ 
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin-bottom: 20px;
+}
+ 
+.chart-container.small {
+    height: 300px;
+}
+ 
+.full-width {
+    grid-column: 1 / -1;
+}
+ 
+.trust-level {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+ 
+.trust-item {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+ 
+.trust-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+ 
+.trust-circle.yes {
+    background: #10b981;
+}
+ 
+.trust-circle.partial {
+    background: #f59e0b;
+}
+ 
+.trust-circle.no {
+    background: #ef4444;
+}
+ 
+.trust-circle.complete {
+    background: #06b6d4;
+}
+ 
+.trust-label {
+    color: #666;
+    font-size: 0.9em;
+}
+ 
+@media (max-width: 1200px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+ 
+    .header h1 {
+        font-size: 1.8em;
+    }
+ 
+    .chart-container {
+        height: 350px;
+    }
+}
+ 
+.footer {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    padding: 20px;
+    opacity: 0.8;
+}
