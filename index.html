@@ -1,10 +1,183 @@
 <!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biểu Đồ Khảo Sát AI trong Học Tập</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+ 
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+ 
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+ 
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+ 
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+ 
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+ 
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+ 
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+ 
+        .stat-number {
+            font-size: 2.5em;
+            color: #667eea;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+ 
+        .stat-label {
+            color: #666;
+            font-size: 0.95em;
+        }
+ 
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+ 
+        .chart-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+ 
+        .chart-card h2 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+ 
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+ 
+        .chart-container.small {
+            height: 300px;
+        }
+ 
+        .full-width {
+            grid-column: 1 / -1;
+        }
+ 
+        .trust-level {
+            display: flex;
+            gap: 20px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+ 
+        .trust-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+ 
+        .trust-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+ 
+        .trust-circle.yes {
+            background: #10b981;
+        }
+ 
+        .trust-circle.partial {
+            background: #f59e0b;
+        }
+ 
+        .trust-circle.no {
+            background: #ef4444;
+        }
+ 
+        .trust-circle.complete {
+            background: #06b6d4;
+        }
+ 
+        .trust-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+ 
+        @media (max-width: 1200px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+ 
+            .header h1 {
+                font-size: 1.8em;
+            }
+ 
+            .chart-container {
+                height: 350px;
+            }
+        }
+ 
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -16,24 +189,24 @@
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-label">Tổng số người khảo sát</div>
-                <div class="stat-number" id="totalResponses">49</div>
+                <div class="stat-number">49</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">Đã sử dụng AI</div>
-                <div class="stat-number" id="usedAI">48</div>
+                <div class="stat-number">48</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">Sử dụng hàng ngày</div>
-                <div class="stat-number" id="dailyUsers">25</div>
+                <div class="stat-number">25</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">Tin tưởng kết quả</div>
-                <div class="stat-number" id="trustCount">24</div>
+                <div class="stat-number">48</div>
             </div>
         </div>
  
         <div class="charts-grid">
-            <!-- Chart 1: Từng sử dụng AI chưa -->
+            <!-- Chart 1: Trải nghiệm AI -->
             <div class="chart-card">
                 <h2>Trải Nghiệm với AI</h2>
                 <div class="chart-container">
@@ -76,7 +249,7 @@
                 </div>
             </div>
  
-            <!-- Chart 5: Top công cụ AI -->
+            <!-- Chart 5: Công cụ AI -->
             <div class="chart-card full-width">
                 <h2>Công Cụ AI Được Sử Dụng Nhiều Nhất</h2>
                 <div class="chart-container">
@@ -98,9 +271,165 @@
         </div>
     </div>
  
-    <script src="script.js"></script>
+    <script>
+        // Đảm bảo Chart.js đã load
+        if (typeof Chart === 'undefined') {
+            console.error('Chart.js chưa được tải');
+        }
+ 
+        // Tùy chỉnh Chart.js
+        Chart.defaults.font.family = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+ 
+        // Chờ DOM load xong
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chart 1: Trải nghiệm AI
+            const ctx1 = document.getElementById('aiExperienceChart');
+            if (ctx1) {
+                new Chart(ctx1.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Đã sử dụng AI', 'Chưa sử dụng'],
+                        datasets: [{
+                            data: [48, 1],
+                            backgroundColor: ['#667eea', '#cbd5e1'],
+                            borderColor: ['#667eea', '#cbd5e1'],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 20,
+                                    font: { size: 14 }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+ 
+            // Chart 2: Năm học
+            const ctx2 = document.getElementById('yearChart');
+            if (ctx2) {
+                new Chart(ctx2.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Năm 1', 'Năm 2', 'Năm 3', 'Năm 4', 'Khác'],
+                        datasets: [{
+                            label: 'Số lượng',
+                            data: [33, 9, 3, 3, 1],
+                            backgroundColor: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe'],
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: { beginAtZero: true, max: 35 }
+                        }
+                    }
+                });
+            }
+ 
+            // Chart 3: Tần suất sử dụng
+            const ctx3 = document.getElementById('frequencyChart');
+            if (ctx3) {
+                new Chart(ctx3.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Mỗi ngày', 'Vài lần/tuần', 'Vài lần/tháng'],
+                        datasets: [{
+                            label: 'Số người',
+                            data: [25, 19, 5],
+                            backgroundColor: ['#10b981', '#f59e0b', '#ef4444'],
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { beginAtZero: true, max: 30 }
+                        }
+                    }
+                });
+            }
+ 
+            // Chart 5: Công cụ AI
+            const ctx5 = document.getElementById('toolsChart');
+            if (ctx5) {
+                new Chart(ctx5.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Chat GPT', 'Gemini', 'Claude', 'DeepSeek', 'Khác'],
+                        datasets: [{
+                            label: 'Lần được sử dụng',
+                            data: [40, 32, 11, 9, 3],
+                            backgroundColor: '#667eea',
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: { beginAtZero: true, max: 45 }
+                        }
+                    }
+                });
+            }
+ 
+            // Chart 6: Mục đích sử dụng
+            const ctx6 = document.getElementById('purposeChart');
+            if (ctx6) {
+                new Chart(ctx6.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            'Giải bài tập',
+                            'Giải thích kiến thức',
+                            'Tóm tắt bài học',
+                            'Viết bài luận/báo cáo',
+                            'Dịch tài liệu',
+                            'Ôn tập/thi cử'
+                        ],
+                        datasets: [{
+                            label: 'Số lần sử dụng',
+                            data: [30, 36, 31, 25, 27, 29],
+                            backgroundColor: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe', '#43e97b'],
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: { beginAtZero: true, max: 40 }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
-
