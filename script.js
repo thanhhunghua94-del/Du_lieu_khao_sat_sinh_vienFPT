@@ -63,7 +63,7 @@ new Chart(ctx3, {
         labels: ['Mỗi ngày', 'Vài lần/tuần', 'Vài lần/tháng'],
         datasets: [{
             label: 'Số người',
-            data: [27, 34, 39],
+            data: [50, 34, 16],
             backgroundColor: ['#10b981', '#f59e0b', '#ef4444'],
             borderRadius: 8
         }]
@@ -75,7 +75,7 @@ new Chart(ctx3, {
             legend: { display: false }
         },
         scales: {
-            y: { beginAtZero: true, max: 40 }
+            y: { beginAtZero: true, max: 50 }
         }
     }
 });
