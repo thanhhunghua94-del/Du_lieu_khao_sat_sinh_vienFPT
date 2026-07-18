@@ -8,7 +8,7 @@ new Chart(ctx1, {
     data: {
         labels: ['Đã sử dụng AI', 'Chưa sử dụng'],
         datasets: [{
-            data: [48,0],
+            data: [ 98, 1],
             backgroundColor: ['#667eea', '#cbd5e1'],
             borderColor: ['#667eea', '#cbd5e1'],
             borderWidth: 2
@@ -37,7 +37,7 @@ new Chart(ctx2, {
         labels: ['Năm 1', 'Năm 2', 'Năm 3', 'Năm 4', 'Khác'],
         datasets: [{
             label: 'Số lượng',
-            data: [33, 9, 3, 3, 1],
+            data: [33, 20, 17, 17, 13],
             backgroundColor: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe'],
             borderRadius: 8
         }]
@@ -63,7 +63,7 @@ new Chart(ctx3, {
         labels: ['Mỗi ngày', 'Vài lần/tuần', 'Vài lần/tháng'],
         datasets: [{
             label: 'Số người',
-            data: [25, 19, 5],
+            data: [27, 34, 39],
             backgroundColor: ['#10b981', '#f59e0b', '#ef4444'],
             borderRadius: 8
         }]
@@ -75,7 +75,7 @@ new Chart(ctx3, {
             legend: { display: false }
         },
         scales: {
-            y: { beginAtZero: true, max: 30 }
+            y: { beginAtZero: true, max: 40 }
         }
     }
 });
@@ -88,7 +88,7 @@ new Chart(ctx5, {
         labels: ['Chat GPT', 'Gemini', 'Claude', 'DeepSeek', 'Khác'],
         datasets: [{
             label: 'Lần được sử dụng',
-            data: [40, 32, 11, 9, 3],
+            data: [40, 32, 11, 9, 8],
             backgroundColor: '#667eea',
             borderRadius: 8
         }]
@@ -121,7 +121,7 @@ new Chart(ctx6, {
         ],
         datasets: [{
             label: 'Số lần sử dụng',
-            data: [30, 36, 31, 25, 27, 29],
+            data: [60, 50, 55, 25, 27, 45],
             backgroundColor: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe', '#43e97b'],
             borderRadius: 8
         }]
@@ -134,7 +134,7 @@ new Chart(ctx6, {
             legend: { display: false }
         },
         scales: {
-            x: { beginAtZero: true, max: 40 }
+            x: { beginAtZero: true, max: 65 }
         }
     }
 });
