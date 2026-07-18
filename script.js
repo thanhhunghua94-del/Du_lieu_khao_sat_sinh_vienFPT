@@ -8,7 +8,7 @@ new Chart(ctx1, {
     data: {
         labels: ['Đã sử dụng AI', 'Chưa sử dụng'],
         datasets: [{
-            data: [ 98, 1],
+            data: [ 98, 2],
             backgroundColor: ['#667eea', '#cbd5e1'],
             borderColor: ['#667eea', '#cbd5e1'],
             borderWidth: 2
